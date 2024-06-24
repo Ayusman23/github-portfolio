@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayusman Samantaray - Portfolio</title>
+    <style>
+            :root {
+            --bg-color: #e0cece;
+            --text-color: #2d372d;
+            --header-bg: #333;
+            --header-text: #0dabe4;
+            --section-bg: #ffffff;
+            --section-text: #2d372d;
+            --project-bg: #001319;
+            --project-text: #f1eeee;
+            --footer-bg: #333;
+            --footer-text: #fcf1f1;
+        }
+         /* Dark mode colors */
+         body.dark-mode {
+            --bg-color: #2d372d;
+            --text-color: #e0cece;
+            --header-bg: #1a1a1a;
+            --header-text: #0dabe4;
+            --section-bg: #2b2b2b;
+            --section-text: #ffffff;
+            --project-bg: #001319;
+            --project-text: #f1eeee;
+            --footer-bg: #1a1a1a;
+            --footer-text: #fcf1f1;
+        }
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--header-bg);
+    color: #b4dfb4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #0dabe4;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+.profile-img {
+    display: block;
+    width: 70px; /* Adjust image width */
+    height: auto;
+    border-radius: 40%; /* Rounded shape */
+    object-fit: cover; /* Ensure the image covers the container */
+    margin-left: 10px; /* Adjust margin as needed */
+    float: right;
+}
+nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--header-bg);
+            margin-top: 50px;
+        }
+
+        nav a {
+            color: var(--header-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.project {
+    background-color: #001319;
+    color: #f1eeee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #130101;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fcf1f1;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    top: 90%;
+}
+    </style>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            </div>
+            <h1>Ayusman Samantaray</h1>
+            <p>Software Engineer</p>
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hello Everyone ,I am ayusman samantary. I am from koraput.I have done my schooling from Saraswati Shishu Vidya Mandir, koraput and my 12th from Tallent's Higher Secondary School Of Science And Tech,Koraput.Now I am persuing my btech degree in Computer Science And Engineering from Government College Of Engineering ,Kalhandi,Bhawanipatna </p>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>I have done Projects in c language at my college.</h3>
+                    <p>College given projects.</p>
+                </div>
+                <div class="project">
+                    <h3>I have done Projects in JAVA language at my college.</h3>
+                    <p>College given projects.</p>
+                </div>
+                <div class="project">
+                    <h3>I have done Projects in Python language at my college.</h3>
+                    <p>College given projects.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Email: ayusmansamantaray23@gmail.com.com</p>
+                <p>Phone: +91 83289-43690</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ayusman Samantaray. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const sectionId = this.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionId);
+
+                window.scrollTo({
+                    top: section.offsetTop - 100, // Adjust according to header height
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dark mode toggle function
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
